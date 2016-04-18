@@ -1,0 +1,2 @@
+记录时间：2016-03-31 11:41:38,447 线程ID:[1] 日志级别：ERROR 出错类：ClassLibrary1.LogHelper property:[(null)] - 错误描述：cuowu
+记录时间：2016-03-31 11:49:29,687 线程ID:[1] 日志级别：ERROR 出错类：ClassLibrary1.LogHelper property:[(null)] - 错误描述：cuowu
