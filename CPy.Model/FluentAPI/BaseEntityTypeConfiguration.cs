@@ -1,11 +1,11 @@
 ﻿using System;
-using Abp.Domain.Entities;
 using System.Data.Entity.ModelConfiguration;
+using CPy.Domain.Entities;
 
 namespace CPy.Model.FluentAPI
 {
-    public class BaseEntityTypeConfiguration<TModel> : EntityTypeConfiguration<TModel> where TModel : Entity<Guid> 
+    public class BaseEntityTypeConfiguration<TModel> : EntityTypeConfiguration<TModel> where TModel : class ,IEntity<Guid>
     {
-         
+
     }
 }

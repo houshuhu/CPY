@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Abp.Domain.Entities.Auditing;
+using CPy.Domain.Entities;
+using CPy.Domain.Entities.Audit;
 
 namespace CPy.Model.Models.User
 {
     [Description("角色")]
     [Table("SysRole")]
-    public class SysRole : FullAuditedEntity<Guid>
+    public class SysRole : AuditEntity
     {
         /// <summary>
         /// 角色名称

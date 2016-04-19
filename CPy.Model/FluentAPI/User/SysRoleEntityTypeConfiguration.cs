@@ -1,5 +1,5 @@
 ﻿using System.Data.Entity.ModelConfiguration;
-using CPy.Model.Model.User;
+using CPy.Model.Models.User;
 
 namespace CPy.Model.FluentAPI.User
 {

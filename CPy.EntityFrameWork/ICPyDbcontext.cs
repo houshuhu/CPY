@@ -1,10 +1,10 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using CPy.Model.Model.User;
+using CPy.Model.Models.User;
 
 namespace CPy.EntityFrameWork
 {
-    public interface ICPyDbcontext
+    public interface ICPyDbContext
     {
         #region Method
         int SaveChanges();

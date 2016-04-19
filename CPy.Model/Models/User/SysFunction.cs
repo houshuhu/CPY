@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Abp.Domain.Entities.Auditing;
+using CPy.Domain.Entities.Audit;
 
 namespace CPy.Model.Models.User
 {
     [Description("功能")]
     [Table("SysFunction")]
-    public class SysFunction:FullAuditedEntity<Guid>
+    public class SysFunction:AuditEntity
     {
         [MaxLength(50)]
         public string FUrl { get; set; }

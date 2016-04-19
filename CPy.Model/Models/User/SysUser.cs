@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Abp.Domain.Entities;
-using Abp.Domain.Entities.Auditing;
+using CPy.Domain.Entities;
+using CPy.Domain.Entities.Audit;
 
 namespace CPy.Model.Models.User
 {
     [Description("用户")]
     [Table("SysUser")]
-    public class SysUser:FullAuditedEntity<Guid>
+    public class SysUser:AuditEntity
     {
         /// <summary>
         /// 账号

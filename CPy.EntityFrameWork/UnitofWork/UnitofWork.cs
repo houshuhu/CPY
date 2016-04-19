@@ -5,10 +5,10 @@ namespace CPy.EntityFrameWork.UnitofWork
 {
     public class UnitofWork:IUnitofWork
     {
-        private readonly ICPyDbcontext _dbContext;
+        private readonly ICPyDbContext _dbContext;
         private bool _disposed = false;
 
-        public UnitofWork(ICPyDbcontext dbcontext)
+        public UnitofWork(ICPyDbContext dbcontext)
         {
             _dbContext = dbcontext;
         }

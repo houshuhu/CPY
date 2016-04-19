@@ -3,31 +3,26 @@ using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Reflection;
-using Abp.Domain.Entities;
 using CPy.Model.FluentAPI;
-using CPy.Model.Model.User;
+using CPy.Model.FluentAPI.User;
+using CPy.Model.Models.User;
 
 namespace CPy.EntityFrameWork
 {
-    public class CPyDbContext:DbContext,ICPyDbcontext
+    public class CPyDbContext : DbContext, ICPyDbContext
     {
         public CPyDbContext()
             : base("default")
         {
         }
-        public CPyDbContext(string nameOrConnectionString)
-            : base(nameOrConnectionString)
-        {
-
-        }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             var types = Assembly.GetAssembly(typeof(BaseEntityTypeConfiguration<>)).GetTypes();
+            
             var registerTypes =types.Where(
-                    t =>
+                    t => t.IsClass && t.BaseType != null && t.BaseType.IsGenericType &&
                         t != typeof(BaseEntityTypeConfiguration<>)&&
-                        t.BaseType != null &&
-                        t.BaseType.GetGenericTypeDefinition() == typeof(BaseEntityTypeConfiguration<>));
+                        t.BaseType.GetGenericTypeDefinition() == typeof(BaseEntityTypeConfiguration<>)).ToList();
             foreach (var registerType in registerTypes)
             {
                 dynamic configurationInstance = Activator.CreateInstance(registerType);

@@ -18,6 +18,5 @@ E:\housh\Git\CPy\CPy.IApplication\bin\Debug\Nito.AsyncEx.xml
 E:\housh\Git\CPy\CPy.IApplication\bin\Debug\Nito.AsyncEx.Concurrent.xml
 E:\housh\Git\CPy\CPy.IApplication\bin\Debug\Nito.AsyncEx.Enlightenment.xml
 E:\housh\Git\CPy\CPy.IApplication\bin\Debug\System.Collections.Immutable.xml
-E:\housh\Git\CPy\CPy.IApplication\obj\Debug\CPy.IApplication.csprojResolveAssemblyReference.cache
 E:\housh\Git\CPy\CPy.IApplication\obj\Debug\CPy.IApplication.dll
 E:\housh\Git\CPy\CPy.IApplication\obj\Debug\CPy.IApplication.pdb

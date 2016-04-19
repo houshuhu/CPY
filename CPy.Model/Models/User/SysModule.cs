@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Abp.Domain.Entities.Auditing;
+using CPy.Domain.Entities.Audit;
 
 namespace CPy.Model.Models.User
 {
     [Description("模块")]
     [Table("SysModule")]
-    public class SysModule : FullAuditedEntity<Guid>
+    public class SysModule : AuditEntity
     {
         /// <summary>
         /// 模块编号

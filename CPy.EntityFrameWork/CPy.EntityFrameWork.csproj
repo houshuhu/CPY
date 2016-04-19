@@ -30,10 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.8.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.0.8.4.0\lib\net452\Abp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -78,7 +74,9 @@
   <ItemGroup>
     <Compile Include="CPyDbContext.cs" />
     <Compile Include="CPyDbContextInitialize.cs" />
-    <Compile Include="ICPyDbcontext.cs" />
+    <Compile Include="EfRepository\BaseRepostitory.cs" />
+    <Compile Include="EfRepository\EfRepositoryBase.cs" />
+    <Compile Include="ICPyDbContext.cs" />
     <Compile Include="Migrations\201604060900385_inital.cs" />
     <Compile Include="Migrations\201604060900385_inital.Designer.cs">
       <DependentUpon>201604060900385_inital.cs</DependentUpon>
@@ -100,6 +98,14 @@
     <ProjectReference Include="..\CPy.Core\CPy.Core.csproj">
       <Project>{669f5a13-e134-4dd4-9c47-4edc84a1ec3f}</Project>
       <Name>CPy.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy.Model\CPy.Model.csproj">
+      <Project>{3EE6D82A-DD53-42E7-997E-348E78A988CC}</Project>
+      <Name>CPy.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy\CPy.csproj">
+      <Project>{002f8980-23d2-41db-a2fe-a6a940c9b6e1}</Project>
+      <Name>CPy</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

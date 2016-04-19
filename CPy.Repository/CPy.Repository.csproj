@@ -84,15 +84,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Base\BaseRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Folder Include="Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CPy.Core\CPy.Core.csproj">
+      <Project>{669f5a13-e134-4dd4-9c47-4edc84a1ec3f}</Project>
+      <Name>CPy.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CPy.EntityFrameWork\CPy.EntityFrameWork.csproj">
       <Project>{e3246666-eba6-40bf-a8b4-2d9aa42ccf52}</Project>
       <Name>CPy.EntityFrameWork</Name>

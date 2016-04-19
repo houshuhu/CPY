@@ -30,22 +30,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Abp, Version=0.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Abp.0.8.3.0\lib\net452\Abp.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Castle.Core, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Castle.Facilities.Logging, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.LoggingFacility.3.3.0\lib\net45\Castle.Facilities.Logging.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Castle.Windsor, Version=3.3.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -76,12 +60,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
+    <Compile Include="User\UserApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CPy.Core\CPy.Core.csproj">
+      <Project>{669f5a13-e134-4dd4-9c47-4edc84a1ec3f}</Project>
+      <Name>CPy.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy.EntityFrameWork\CPy.EntityFrameWork.csproj">
+      <Project>{e3246666-eba6-40bf-a8b4-2d9aa42ccf52}</Project>
+      <Name>CPy.EntityFrameWork</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy.IApplication\CPy.IApplication.csproj">
+      <Project>{fd910429-14ff-42ab-8dfb-ddb9d978b169}</Project>
+      <Name>CPy.IApplication</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy.IRepository\CPy.IRepository.csproj">
+      <Project>{676869c6-313b-43f6-acf2-8065aab24074}</Project>
+      <Name>CPy.IRepository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy.Model\CPy.Model.csproj">
+      <Project>{3ee6d82a-dd53-42e7-997e-348e78a988cc}</Project>
+      <Name>CPy.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy\CPy.csproj">
+      <Project>{002f8980-23d2-41db-a2fe-a6a940c9b6e1}</Project>
+      <Name>CPy</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
