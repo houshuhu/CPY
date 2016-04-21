@@ -16,8 +16,9 @@ namespace CPy.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+                defaults: new {controller = "Layout", action = "Index", id = UrlParameter.Optional },
+                namespaces: new string[] { "Layout.Controllers" }  //默认控制器的命名空间
+            ).DataTokens.Add("area", "Layout");   //默认area 的控制器名称
         }
     }
 }

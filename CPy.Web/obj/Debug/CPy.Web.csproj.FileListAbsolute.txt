@@ -185,3 +185,5 @@ E:\housh\Git\CPy\CPy.Web\bin\CPy.Web.dll
 E:\housh\Git\CPy\CPy.Web\bin\CPy.Web.pdb
 E:\housh\Git\CPy\CPy.Web\obj\Debug\CPy.Web.dll
 E:\housh\Git\CPy\CPy.Web\obj\Debug\CPy.Web.pdb
+E:\housh\Git\CPy\CPy.Web\bin\CPy.Dto.dll
+E:\housh\Git\CPy\CPy.Web\bin\CPy.Dto.pdb
