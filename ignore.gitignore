@@ -3,6 +3,7 @@
 foo.txt
 bin/ 
 obj/
+packages/
 # 忽略所有生成的 html 文件,
 *.dll
 *.suo
