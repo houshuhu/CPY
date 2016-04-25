@@ -40,11 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExcuteResult\EmptyResult.cs" />
-    <Compile Include="ExcuteResult\ExcuteResultType.cs" />
-    <Compile Include="ExcuteResult\HandleWebResult.cs" />
-    <Compile Include="ExcuteResult\WebExcuteResult.cs" />
-    <Compile Include="LinqExpressions\DynamicLinqExpressions  .cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

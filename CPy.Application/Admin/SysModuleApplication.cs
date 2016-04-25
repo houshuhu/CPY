@@ -1,10 +1,15 @@
-﻿using System.Collections.Generic;
-using CPy.Common.ExcuteResult;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using CPy.Core.UnitofWork;
 using CPy.Domain.Repositories;
 using CPy.Dto.Admin;
 using CPy.IApplication.Admin;
+using CPy.Linq.Extensions;
 using CPy.Model.Models.Admin;
+using CPy.ResultDto.ExcuteResult;
+using CPy.ResultDto.Pagination;
 
 namespace CPy.Application.Admin
 {
@@ -19,9 +24,21 @@ namespace CPy.Application.Admin
             _sysModuleRepository = sysModuleRepository;
         }
 
-        public WebExcuteResult<List<SysModuleSearchDto>> Search(SysModuleSearchParam param)
+        public WebExcuteResult<PagedResultOutPut<SysModuleSearchDto>> Search(SysModuleSearchParam param)
         {
-            throw new System.NotImplementedException();
+            Expression<Func<SysModule, bool>> expression = t => true;
+            if (!string.IsNullOrEmpty(param.ModuleName))
+            {
+                expression = expression.And(t => t.MName.Contains(param.ModuleName));
+            }
+            IQueryable<SysModule> modules =
+                _sysModuleRepository.GetEntities().Where(expression).OrderBy(t => t.MNo).PageBy(param);
+            var result = modules.CheckifNoCount<SysModule, SysModuleSearchDto>();
+            if (result.ResultDate.RowsCount!=0)
+            {
+                
+            }
+            return result;
         }
     }
 }

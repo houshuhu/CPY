@@ -32,6 +32,10 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,7 +61,16 @@
     <Compile Include="Domain\Repositories\CPyRepositoryBase.cs" />
     <Compile Include="Domain\Repositories\IRepository.cs" />
     <Compile Include="Domain\Repositories\IRepositoryofTEntityAndTPrimaryKey.cs" />
+    <Compile Include="Linq\Extensions\DynamicLinqExtensions.cs" />
+    <Compile Include="Linq\Extensions\QueryExtensions.cs" />
+    <Compile Include="RequestDto\Pagination\IPagination.cs" />
+    <Compile Include="RequestDto\Pagination\Pagination.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultDto\ExcuteResult\EmptyResult.cs" />
+    <Compile Include="ResultDto\ExcuteResult\ExcuteResultType.cs" />
+    <Compile Include="ResultDto\ExcuteResult\HandleWebResult.cs" />
+    <Compile Include="ResultDto\ExcuteResult\WebExcuteResult.cs" />
+    <Compile Include="ResultDto\Pagination\PagedResultDto.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

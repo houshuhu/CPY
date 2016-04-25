@@ -1,8 +1,9 @@
 ﻿using System;
+using CPy.RequestDto.Pagination;
 
 namespace CPy.Dto.Admin
 {
-    public class SysModuleSearchParam
+    public class SysModuleSearchParam:Pagination
     {
         public string ModuleName { get; set; }
     }

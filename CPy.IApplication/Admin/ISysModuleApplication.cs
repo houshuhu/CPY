@@ -1,11 +1,12 @@
 ﻿using System.Collections.Generic;
-using CPy.Common.ExcuteResult;
 using CPy.Dto.Admin;
+using CPy.ResultDto.ExcuteResult;
+using CPy.ResultDto.Pagination;
 
 namespace CPy.IApplication.Admin
 {
     public interface ISysModuleApplication
     {
-        WebExcuteResult<List<SysModuleSearchDto>> Search(SysModuleSearchParam param);
+        WebExcuteResult<PagedResultOutPut<SysModuleSearchDto>> Search(SysModuleSearchParam param);
     }
 }
