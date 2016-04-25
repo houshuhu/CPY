@@ -59,16 +59,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\SysFunctionApplication.cs" />
+    <Compile Include="Admin\SysModuleApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\UserApplication.cs" />
+    <Compile Include="Admin\UserApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CPy.Common\CPy.Common.csproj">
+      <Project>{23939e23-7615-4777-a055-faf11cdd5b8c}</Project>
+      <Name>CPy.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CPy.Core\CPy.Core.csproj">
       <Project>{669f5a13-e134-4dd4-9c47-4edc84a1ec3f}</Project>
       <Name>CPy.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy.Dto\CPy.Dto.csproj">
+      <Project>{be2cf702-3585-4123-bc4f-77b12d889eb7}</Project>
+      <Name>CPy.Dto</Name>
     </ProjectReference>
     <ProjectReference Include="..\CPy.EntityFrameWork\CPy.EntityFrameWork.csproj">
       <Project>{e3246666-eba6-40bf-a8b4-2d9aa42ccf52}</Project>

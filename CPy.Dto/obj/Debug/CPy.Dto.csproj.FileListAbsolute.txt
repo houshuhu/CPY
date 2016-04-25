@@ -1,0 +1,5 @@
+E:\housh\Git\CPy\CPy.Dto\bin\Debug\CPy.Dto.dll
+E:\housh\Git\CPy\CPy.Dto\bin\Debug\CPy.Dto.pdb
+E:\housh\Git\CPy\CPy.Dto\obj\Debug\CPy.Dto.dll
+E:\housh\Git\CPy\CPy.Dto\obj\Debug\CPy.Dto.pdb
+E:\housh\Git\CPy\CPy.Dto\obj\Debug\CPy.Dto.csprojResolveAssemblyReference.cache

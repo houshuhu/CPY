@@ -17,7 +17,7 @@ namespace ClassLibrary1
             using (var content = new MultipartFormDataContent())
             {
                 // Make sure to change API address  
-                client.BaseAddress = new Uri("http://117.143.220.126:8093/");
+                client.BaseAddress = new Uri("http://localhost:8278/");
 
                 // Add  file content  
                 var fileContent = new ByteArrayContent(File.ReadAllBytes(@"C:\Users\Administrator\Desktop\Sample.txt"));
@@ -28,19 +28,19 @@ namespace ClassLibrary1
                 content.Add(fileContent);
 
                 //Add Parames content
-                NameValueCollection collection=new NameValueCollection()
-                {
-                    {"Name","001分组下文件"},{"ParentId","81"}
-                };
-                foreach (var key in collection.AllKeys)
-                {
-                    var dataContent = new ByteArrayContent(Encoding.UTF8.GetBytes(collection[key]));
-                    dataContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-                    {
-                        Name = key
-                    };
-                    content.Add(dataContent);
-                } 
+                //NameValueCollection collection=new NameValueCollection()
+                //{
+                //    {"AttachmentCategoryId","9"}
+                //};
+                //foreach (var key in collection.AllKeys)
+                //{
+                //    var dataContent = new ByteArrayContent(Encoding.UTF8.GetBytes(collection[key]));
+                //    dataContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+                //    {
+                //        Name = key
+                //    };
+                //    content.Add(dataContent);
+                //} 
                 
 
                 // Make a call to Web API  

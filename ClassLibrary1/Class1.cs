@@ -7,11 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using Castle.MicroKernel.Lifestyle;
 using Castle.Windsor;
-using CPy.Application.Test.User;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor.Installer;
-using CPy.Application.Test;
-using CPy.Application.Test.Role;
 using NUnit.Framework;
 
 namespace ClassLibrary1

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.Entity.ModelConfiguration;
-using CPy.Model.Models.User;
+using CPy.Model.Models.Admin;
 
 namespace CPy.Model.FluentAPI.User
 {

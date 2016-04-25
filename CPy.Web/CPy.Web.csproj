@@ -157,13 +157,15 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\IOCConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\SysFunctionController.cs" />
     <Compile Include="Areas\Layout\Controllers\LayoutController.cs" />
     <Compile Include="Areas\Layout\LayoutAreaRegistration.cs" />
-    <Compile Include="Areas\User\Controllers\UserController.cs" />
-    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -511,11 +513,9 @@
     <Content Include="Content\jquery_easyui\themes\metro\window.css" />
     <Content Include="Content\jquery_easyui\themes\mobile.css" />
     <Content Include="Content\Scripts\jqueryui.layout.common.js" />
+    <Content Include="Content\Scripts\less.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Areas\User\Views\web.config" />
-    <Content Include="Areas\User\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\User\Views\Shared\_Layout.cshtml" />
     <Content Include="Content\jquery_easyui\themes\material\images\Thumbs.db" />
     <Content Include="HtmlPage1.html" />
     <Content Include="Web.config" />
@@ -533,9 +533,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Models\" />
+    <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="Areas\Layout\Models\" />
     <Folder Include="Areas\Layout\Views\Shared\" />
-    <Folder Include="Areas\User\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -588,9 +589,7 @@
     <Content Include="Areas\Layout\Views\Layout\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\User\Views\User\Index.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
+    <Content Include="Areas\Admin\Views\web.config" />
     <None Include="Content\less\main.layout.common.less" />
   </ItemGroup>
   <PropertyGroup>

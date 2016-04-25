@@ -75,11 +75,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\ISysFunctionApplication.cs" />
+    <Compile Include="Admin\ISysModuleApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User\IUserApplication.cs" />
+    <Compile Include="Admin\IUserApplication.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CPy.Common\CPy.Common.csproj">
+      <Project>{23939e23-7615-4777-a055-faf11cdd5b8c}</Project>
+      <Name>CPy.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CPy.Dto\CPy.Dto.csproj">
+      <Project>{be2cf702-3585-4123-bc4f-77b12d889eb7}</Project>
+      <Name>CPy.Dto</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

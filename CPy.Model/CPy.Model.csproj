@@ -79,11 +79,11 @@
     <Compile Include="FluentAPI\User\SysModuleEntityTypeConfiguration.cs" />
     <Compile Include="FluentAPI\User\SysRoleEntityTypeConfiguration.cs" />
     <Compile Include="FluentAPI\User\SysUserEntityTypeConfiguration.cs" />
-    <Compile Include="Models\User\SysFunction.cs" />
-    <Compile Include="Models\User\SysModule.cs" />
-    <Compile Include="Models\User\SysRole.cs" />
+    <Compile Include="Models\Admin\SysFunction.cs" />
+    <Compile Include="Models\Admin\SysModule.cs" />
+    <Compile Include="Models\Admin\SysRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Models\User\SysUser.cs" />
+    <Compile Include="Models\Admin\SysUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

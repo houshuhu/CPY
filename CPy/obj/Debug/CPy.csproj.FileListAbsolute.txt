@@ -1,0 +1,4 @@
+E:\housh\Git\CPy\CPy\bin\Debug\CPy.dll
+E:\housh\Git\CPy\CPy\bin\Debug\CPy.pdb
+E:\housh\Git\CPy\CPy\obj\Debug\CPy.dll
+E:\housh\Git\CPy\CPy\obj\Debug\CPy.pdb

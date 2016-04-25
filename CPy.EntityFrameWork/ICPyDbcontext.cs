@@ -1,6 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
-using CPy.Model.Models.User;
+using CPy.Model.Models.Admin;
 
 namespace CPy.EntityFrameWork
 {

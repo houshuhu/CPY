@@ -1,0 +1,7 @@
+E:\housh\Git\CPy\CPy.Common.Test\bin\Debug\CPy.Common.Test.dll
+E:\housh\Git\CPy\CPy.Common.Test\bin\Debug\CPy.Common.Test.pdb
+E:\housh\Git\CPy\CPy.Common.Test\bin\Debug\CPy.Common.dll
+E:\housh\Git\CPy\CPy.Common.Test\bin\Debug\CPy.Common.pdb
+E:\housh\Git\CPy\CPy.Common.Test\obj\Debug\CPy.Common.Test.csprojResolveAssemblyReference.cache
+E:\housh\Git\CPy\CPy.Common.Test\obj\Debug\CPy.Common.Test.dll
+E:\housh\Git\CPy\CPy.Common.Test\obj\Debug\CPy.Common.Test.pdb

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using CPy.Model.FluentAPI;
 using CPy.Model.FluentAPI.User;
-using CPy.Model.Models.User;
+using CPy.Model.Models.Admin;
 
 namespace CPy.EntityFrameWork
 {
