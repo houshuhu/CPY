@@ -27,20 +27,20 @@ namespace ClassLibrary1
                 };
                 content.Add(fileContent);
 
-                //Add Parames content
-                //NameValueCollection collection=new NameValueCollection()
-                //{
-                //    {"AttachmentCategoryId","9"}
-                //};
-                //foreach (var key in collection.AllKeys)
-                //{
-                //    var dataContent = new ByteArrayContent(Encoding.UTF8.GetBytes(collection[key]));
-                //    dataContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
-                //    {
-                //        Name = key
-                //    };
-                //    content.Add(dataContent);
-                //} 
+               // Add Parames content
+                NameValueCollection collection=new NameValueCollection()
+                {
+                    {"AttachmentCategoryId","9"}
+                };
+                foreach (var key in collection.AllKeys)
+                {
+                    var dataContent = new ByteArrayContent(Encoding.UTF8.GetBytes(collection[key]));
+                    dataContent.Headers.ContentDisposition = new ContentDispositionHeaderValue("attachment")
+                    {
+                        Name = key
+                    };
+                    content.Add(dataContent);
+                } 
                 
 
                 // Make a call to Web API  

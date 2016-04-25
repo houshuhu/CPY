@@ -1,9 +1,9 @@
 # 以'#' 开始的行，被视为注释.
 # 忽略掉所有文件名是 foo.txt 的文件.
 foo.txt
-bin/ 
-obj/
-packages/
+/bin 
+/obj
+/packages
 # 忽略所有生成的 html 文件,
 *.dll
 *.suo
