@@ -43,7 +43,12 @@
     <Compile Include="Admin\SysModuleDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\CPy\CPy.csproj">
+      <Project>{002f8980-23d2-41db-a2fe-a6a940c9b6e1}</Project>
+      <Name>CPy</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

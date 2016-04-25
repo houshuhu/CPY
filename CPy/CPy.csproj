@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=4.2.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.4.2.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -43,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutoMapper\AutoMapperHelper.cs" />
     <Compile Include="Domain\Entities\Audit\AuditEntity.cs" />
     <Compile Include="Domain\Entities\Audit\AuditEntityofTPrimaryKey.cs" />
     <Compile Include="Domain\Entities\Audit\FullAuditEnity.cs" />
@@ -70,9 +75,12 @@
     <Compile Include="ResultDto\ExcuteResult\ExcuteResultType.cs" />
     <Compile Include="ResultDto\ExcuteResult\HandleWebResult.cs" />
     <Compile Include="ResultDto\ExcuteResult\WebExcuteResult.cs" />
-    <Compile Include="ResultDto\Pagination\PagedResultDto.cs" />
+    <Compile Include="ResultDto\Pagination\PagedResultOutPut.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

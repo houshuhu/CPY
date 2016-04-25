@@ -4,13 +4,14 @@ namespace CPy.AutoMapper
 {
     public static class AutoMapperHelper
     {
-        public static TDestination MapTo<TSource, TDestination>(this TSource source, Action<IMappingOperationOptions<TSource, TDestination>> opts)
+        public static TDestination MapTo<TSource, TDestination>(this TSource source, Action<IMapperConfiguration> opts)
         {
             if (source == null)
             {
                 return default(TDestination);
             }
-            return Mapper.Map<TSource, TDestination>(source, opts);
+            MapperConfiguration config = new MapperConfiguration(opts);
+            return config.CreateMapper().Map<TDestination>(source);
         }
     }
 }

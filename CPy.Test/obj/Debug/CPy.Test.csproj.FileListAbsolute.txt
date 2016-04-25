@@ -1,0 +1,12 @@
+E:\housh\Git\CPy\CPy.Test\bin\Debug\CPy.Test.dll
+E:\housh\Git\CPy\CPy.Test\bin\Debug\CPy.Test.pdb
+E:\housh\Git\CPy\CPy.Test\bin\Debug\AutoMapper.dll
+E:\housh\Git\CPy\CPy.Test\bin\Debug\CPy.dll
+E:\housh\Git\CPy\CPy.Test\bin\Debug\System.Web.Mvc.dll
+E:\housh\Git\CPy\CPy.Test\bin\Debug\CPy.pdb
+E:\housh\Git\CPy\CPy.Test\bin\Debug\AutoMapper.xml
+E:\housh\Git\CPy\CPy.Test\bin\Debug\System.Web.Mvc.xml
+E:\housh\Git\CPy\CPy.Test\bin\Debug\zh-Hans\System.Web.Mvc.resources.dll
+E:\housh\Git\CPy\CPy.Test\obj\Debug\CPy.Test.csprojResolveAssemblyReference.cache
+E:\housh\Git\CPy\CPy.Test\obj\Debug\CPy.Test.dll
+E:\housh\Git\CPy\CPy.Test\obj\Debug\CPy.Test.pdb
