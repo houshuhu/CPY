@@ -1,0 +1,60 @@
+﻿<script>
+    $(function () {
+        HandleDate.InitDataGrid("dg", "标题", '#toolbar', "@Url.Action("InitGrid", "SysModule")", "Id", false,
+            function(rowIndex, rowData) {
+            },
+            function(rowIndex, rowData) {
+                location.href = '/Admin/SysModule/SysModuleDetail?Id=' + rowData.Id;
+            });
+    });
+    function formatOper(val, row, index) {
+        var id = row.Id;
+        return '<a href="/Admin/SysModule/SysModuleDetail?Id='+id+'">修改</a>';
+    }
+
+    function newSysModule() {
+        location.href = '/Admin/SysModule/SysModuleDetail';
+    }
+
+    function removeSysModule() {
+        HandleDate.DeleteDataGrid('dg', '/Admin/SysModule/Delete');
+    }
+
+    function refresh() {
+        HandleDate.ReLoadDataGrid('dg');
+    }
+
+    function search() {
+        HandleDate.LoadDataGrid('dg', {
+            ModuleName: '模块1',
+            Ids: ["1B607CC6-7B95-4A18-9137-1C8C11DD6A42", "0F739733-86A2-4EF1-ABD3-9A6C96452E83"]
+        });
+    }
+</script>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div id="toolbar">
+    <div class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick=" newSysModule() ">添加</div>
+    <div class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick=" removeSysModule() ">删除</div>
+    <div class="easyui-linkbutton" iconcls="icon-reload" plain="true" onclick=" refresh() ">刷新</div>
+    <div class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick="search()">查询</div>
+</div>
+
+<table id="dg" title="My Users" class="easyui-datagrid">
+    <thead>
+        <tr>
+            <th data-options="field:'MNo',width:100">编号</th>
+            <th data-options="field:'MName',width:100">名称</th>
+            <th data-options="field:'Description',width:100">说明</th>
+            <th data-options="field:'_operate',width:80,align:'center',formatter:formatOper">操作</th>
+        </tr>
+    </thead>
+
+</table>
+
+
+
+
+

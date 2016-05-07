@@ -1,0 +1,54 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>TonyKit 后台管理系统</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    @Styles.Render("~/easyui/css")
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/Content/Scripts/jqueryui.layout.common.js" type="text/javascript"></script>
+    <link rel="stylesheet/less" type="text/css" href="~/Content/less/main.layout.common.less" />
+    <script src="~/Content/Scripts/less.min.js"></script>
+</head>
+<body class="easyui-layout">
+    <h2>fjaojfoajfaofj</h2>
+    <div data-options="region:'north',border:false" style="height: 70px; background: #2596ea; padding: 10px">
+        <p style="width: 300px; height: 50px; line-height: 50px; color: #fff; margin: 0; float: left;font-size: 25px">TonyKit 后台管理系统</p>
+    </div>
+    <div data-options="region:'west',split:true,title:'导航菜单'" style="width: 170px;">
+        <div class="easyui-accordion" data-options="fit:true,border:false">
+            <div title="系统管理" data-options="selected:true">
+                <p class="menu-list-item">
+                    <a href="javascript:void(0)" src="@Url.Action("Index", "SysModule", new{area="Admin"} )">模块管理</a>
+                </p>
+                <p class="menu-list-item">
+                    <a href="javascript:void(0)" src="@Url.Action("Index", "User", new {area = "User"})">用户管理</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div data-options="region:'south',border:false" style="height: 40px; padding: 10px;">south region</div>
+
+    <div data-options="region:'center'">
+        <div id="tabs" class="easyui-tabs" style="height: 100%">
+            <div title="主页" style="padding: 20px; display: none; border: 0">
+                this is MainPage
+            </div>
+        </div>
+    </div>
+    <div id="mm" class="easyui-menu cs-tab-menu">
+        <div id="refresh">刷新</div>
+        <div class="menu-sep"></div>
+        <div id="close">关闭</div>
+        <div id="closeother">关闭其他</div>
+        <div id="closeall">关闭全部</div>
+    </div>
+</body>
+</html>

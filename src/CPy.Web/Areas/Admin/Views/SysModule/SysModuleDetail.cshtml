@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "模块详情";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(function () {
+        var id = HandleUrl.GetQueryString("Id");
+        if (id) {
+            HandleDate.LoadForm('ff', '/Admin/SysModule/InitDetail?Id=' + id);
+        }
+    });
+
+    function clearForm() {
+        $("#ff").form('clear');
+    }
+
+    function back() {
+        location.href = '/Admin/SysModule/Index';
+    }
+
+    function submitForm() {
+        HandleDate.SubmitForm('ff', '/Admin/SysModule/Save', function() {
+            location.href = '/Admin/SysModule/Index';
+        });
+    }
+</script>
+
+<div style="padding: 10px 60px 20px 60px">
+    <div style="border-bottom: 1px solid #95B8E7; margin-bottom: 20px;padding-bottom: 5px">
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-save" plain="true" onclick=" submitForm() ">提交</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-clear" plain="true" onclick=" clearForm() ">清除</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconcls="icon-back" plain="true" onclick=" back() ">返回</a>
+    </div>
+    <form id="ff" method="post">
+
+        <input type="hidden" name="Id"/>
+        <table cellpadding="5">
+            <tr>
+                <td>编号:</td>
+                <td><input class="easyui-textbox" style="height: 30px; width: 200px;" type="text" name="MNo" data-options="required:true"/></td>
+            </tr>
+            <tr>
+                <td>名称:</td>
+                <td><input class="easyui-textbox" style="height: 30px; width: 200px;" type="text" name="MName" data-options="required:true"/></td>
+            </tr>
+            <tr>
+                <td>描述:</td>
+                <td><input class="easyui-textbox" style="height: 60px; width: 300px;" name="Description" data-options="multiline:true"/></td>
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+
+
