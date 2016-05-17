@@ -1,0 +1,101 @@
+﻿@using CPy.Common.ToolStrip
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+    var moduleId;
+    $(function () {
+        HandleDateGrid.InitLeftDataGird("modules_dg", "module_toolbar", "/Admin/SysModule/InitGrid", "Id", true, function (rowIndex, rowData) {
+            moduleId = rowData.Id;
+            HandleDateGrid.LoadDataGrid("functions_dg", {
+                ModuleId: moduleId
+            });
+        });
+        HandleDateGrid.InitDataGrid("functions_dg", "function_toolbar", "/Admin/SysFunction/InitDataGrid", "Id", false);
+
+    });
+    function formatOper(val, row, index) {
+        var id = row.Id;
+        return '<a href="/Admin/SysFunction/Detail?Id=' + id + '&ModuleId=' + row.SysModuleId + '">修改</a>';
+    }
+
+
+    function add() {
+        if (moduleId) {
+            location.href = "/Admin/SysFunction/Detail?ModuleId=" + moduleId;
+        } else {
+            location.href = "/Admin/SysFunction/Detail";
+        }
+    }
+    //菜单查询
+    function function_toolbarsearch() {
+        var param = {
+            FunctionName: $("#FName").val(),
+            ModuleId: moduleId
+        };
+        HandleDateGrid.LoadDataGrid("functions_dg", param);
+    }
+    //菜单重置
+    function function_toolbarreset() {
+        $("#FName").textbox('setValue', '');
+        var param = {
+            FunctionName: "",
+            ModuleId: ""
+        };
+        HandleDateGrid.LoadDataGrid("functions_dg", param);
+    }
+    //模块查询
+    function module_toolbarsearch() {
+        var param = {
+            MName: $("#MName").val()
+        };
+        HandleDateGrid.LoadDataGrid("modules_dg", param);
+    }
+</script>
+<div data-options="region:'west',split:true,title:'导航菜单'" style="width: 300px;">
+    @Html.Partial("_ToolBarPartialPage", new ToolBar()
+    {
+        ToolBarId = "module_toolbar",
+        SearchModules = new List<SearchModule>()
+        {
+            new SearchModule(){ControlType = SearchControlType.Text,Id = "MName",Title = "模块"}
+        }
+    })
+    <table id="modules_dg" title="模块" class="easyui-datagrid">
+        <thead>
+            <tr>
+                <th data-options="field:'MNo',width:100">编号</th>
+                <th data-options="field:'MName',width:100">名称</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+<div data-options="region:'center'">
+    @Html.Partial("_ToolBarPartialPage", new ToolBar()
+    {
+        ToolBarId = "function_toolbar",
+        IsEnableReset = true,
+        SearchModules = new List<SearchModule>()
+        {
+            new SearchModule(){ControlType = SearchControlType.Text,Id = "FName",Title = "菜单名"}
+        },
+        FunctionModules = new List<FunctionModule>()
+        {
+            new FunctionModule(){IsEnable = true,Id="Add"},
+            new FunctionModule(){IsEnable = true,Id="Remove"}
+        }
+    })
+    <table id="functions_dg" title="菜单" class="easyui-datagrid">
+        <thead>
+            <tr>
+                <th data-options="field:'FNo',width:100">编号</th>
+                <th data-options="field:'FName',width:100">名称</th>
+                <th data-options="field:'FUrl',width:100">路径</th>
+                <th data-options="field:'_operate',width:80,align:'center',formatter:formatOper">操作</th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+

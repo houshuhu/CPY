@@ -15,5 +15,7 @@ namespace CPy.IApplication.Admin
         WebExcuteResult<EmptyResult> Save(SysModuleSaveParam param);
 
         WebExcuteResult<EmptyResult> Delete(List<Guid> list);
+
+        WebExcuteResult<List<SysModuleDictionaryList>> GetModuleList();
     }
 }

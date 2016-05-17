@@ -1,0 +1,13 @@
+﻿.own-icon{ background:url(ownicons/tabicons.png) no-repeat;width:18px; line-height:18px; display:inline-block;}
+.own-icon-sys{ background-position:0px -200px;}
+.own-icon-set{ background-position:-380px -200px;}
+.own-icon-add{background-position: -20px 0px;}
+.own-icon-nav{background-position: -100px -20px; }
+.own-icon-users{background-position: -100px -480px;}
+.own-icon-role{background-position: -360px -200px;}
+.own-icon-set{background-position: -380px -200px;}
+.own-icon-log{background-position: -380px -80px;}
+.own-icon-delete{ background-position:-140px -120px;}
+.own-icon-edit{ background-position:-380px -320px;}
+.own-icon-magic{ background-position:0px -500px;}
+.own-icon-database{ background-position:-20px -140px;}

@@ -186,6 +186,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404.htm" />
+    <Content Include="Content\img\Main.jpg" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\jquery_easyui\easyloader.js" />
@@ -423,7 +425,10 @@
     <Content Include="Content\jquery_easyui\themes\icons\reload.png" />
     <Content Include="Content\jquery_easyui\themes\icons\search.png" />
     <Content Include="Content\jquery_easyui\themes\icons\sum.png" />
+    <Content Include="Content\jquery_easyui\themes\own-icon.css" />
+    <Content Include="Content\jquery_easyui\themes\ownicons\tabicons.png" />
     <Content Include="Content\jquery_easyui\themes\icons\tip.png" />
+    <Content Include="Content\jquery_easyui\themes\ownicons\tools-sprites-trans.gif" />
     <Content Include="Content\jquery_easyui\themes\icons\undo.png" />
     <Content Include="Content\jquery_easyui\themes\material\accordion.css" />
     <Content Include="Content\jquery_easyui\themes\material\calendar.css" />
@@ -532,7 +537,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\jquery_easyui\themes\material\images\Thumbs.db" />
-    <Content Include="HtmlPage1.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -607,7 +611,12 @@
     <Content Include="Areas\Admin\Views\web.config" />
     <Content Include="Areas\Admin\Views\SysModule\Index.cshtml" />
     <Content Include="Areas\Admin\Views\SysModule\SysModuleDetail.cshtml" />
+    <Content Include="Areas\Admin\Views\SysFunction\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\SysFunction\Detail.cshtml" />
     <None Include="Content\less\main.layout.common.less" />
+    <Content Include="Views\Shared\_ToolBarPartialPage.cshtml" />
+    <Content Include="Views\Shared\_FormToolBarPartialPage.cshtml" />
+    <None Include="Properties\PublishProfiles\Cpy.pubxml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

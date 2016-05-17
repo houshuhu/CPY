@@ -1,0 +1,73 @@
+﻿@using CPy.Common.ToolStrip
+@model CPy.Common.ToolStrip.ToolBar
+
+<div id="@Model.ToolBarId">
+    <div style="margin-left: 10px">
+
+        @if (Model.FunctionModules != null)
+        {
+            foreach (var functionModule in Model.FunctionModules)
+            {
+                if (functionModule.Id == "Add" && functionModule.IsEnable)
+                {
+                    <a class="easyui-linkbutton" iconcls="icon-add" plain="true" onclick="add() ">添加</a>
+                }
+                if (functionModule.Id == "Remove" && functionModule.IsEnable)
+                {
+                    <div class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="remove() ">删除</div>
+                }
+            }
+        }
+
+
+        @if (Model.FunctionModules != null && Model.SearchModules != null)
+        {
+            <div style="display: inline-block; border-left: 1px solid rgb(204, 204, 204); border-right: 1px solid rgb(255, 255, 255); margin: 0 2px 0 2px; height: 22px; vertical-align: middle;"></div>
+        }
+
+
+        @if (Model.SearchModules != null)
+        {
+
+            foreach (var searchModule in Model.SearchModules)
+            {
+                if (searchModule.ControlType == SearchControlType.DateBox)
+                {
+                    <span style="vertical-align: middle; margin: 0 2px 0 2px">
+                        日期从：<input class="easyui-datebox" id="StartDate" style="width: 120px" data-options="formatter:dateformat">
+                        到：<input class="easyui-datebox" id="EndDate" style="width: 120px" data-options="formatter:dateformat">
+                    </span>
+                }
+                else if (searchModule.ControlType == SearchControlType.ComboBox)
+                {
+                    <span style="vertical-align: middle; margin: 0 2px 0 2px">
+                        @searchModule.Title：<input class="easyui-combobox" id="@searchModule.Id"
+                                                   data-options="valueField:'id',textField:'text',url:'get_data.php'">
+                    </span>
+                }
+                else if (searchModule.ControlType == SearchControlType.Text)
+                {
+                    <span style="vertical-align: middle; margin: 0 2px 0 2px">
+                        @searchModule.Title：<input class="easyui-textbox" id="@searchModule.Id" style="width: 120px">
+                    </span>
+                }
+            }
+            <div class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick=@(@Model.ToolBarId + "search()")>查询</div>
+            if (@Model.IsEnableReset)
+            {
+                <div class="easyui-linkbutton" iconcls="icon-reload" plain="true" onclick=@(@Model.ToolBarId + "reset()")>重置</div>
+            }
+        }
+
+
+    </div>
+</div>
+
+<script>
+    function dateformat(date) {
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        var d = date.getDate();
+        return y + '-' + m + '-' + d;
+    }
+</script>

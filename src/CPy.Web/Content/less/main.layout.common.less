@@ -1,15 +1,54 @@
-﻿.menu-list-item{
-    margin:0;
-    padding:0;
-    height:30px;
-    line-height:30px;
-    font-size:15px;
-    text-align:center;
-    border-bottom:none;
-    a{
-        text-decoration:none;
-        width:100%;
-        height:100%;
-        float:left;
+﻿.easyui-accordion ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 10px;
+
+    li {
+        padding: 0px;
+
+        div {
+            margin: 2px 0px;
+            padding-left: 10px;
+            padding-top: 2px;
+
+            a {
+                display:block;
+                width:133px;
+                height:24px;
+                line-height: 24px;
+                font-size: 13px;
+                text-decoration: none;
+                color: black;
+
+                .icon {
+                    width: 18px;
+                    background-position: center left;
+                    padding-left: 20px;
+                }
+            }
+        }
+
+        div:hover {
+            border: 1px dashed #99BBE8;
+            background: #E0ECFF;
+            cursor: pointer;
+
+            a {
+                color: #416AA3;
+            }
+        }
+
+        div.selected {
+            border: 1px solid #99BBE8;
+            background: #E0ECFF;
+            cursor: default;
+
+            a {
+                color: #416AA3;
+            }
+        }
     }
 }
+
+
+

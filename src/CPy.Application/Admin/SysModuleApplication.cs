@@ -30,9 +30,9 @@ namespace CPy.Application.Admin
         public WebExcuteResult<PagedResultOutPut<SysModuleSearchDto>> Search(SysModuleSearchParam param)
         {
             Expression<Func<SysModule, bool>> expression = t => !t.IsDelete;
-            if (!string.IsNullOrEmpty(param.ModuleName))
+            if (!string.IsNullOrEmpty(param.MName))
             {
-                expression = expression.And(t => t.MName.Contains(param.ModuleName));
+                expression = expression.And(t => t.MName.Contains(param.MName));
             }
             var modules =_sysModuleRepository.GetEntities().Where(expression);
             var result = modules.CheckifNoCount<SysModule, SysModuleSearchDto>();
@@ -78,6 +78,18 @@ namespace CPy.Application.Admin
                 _sysModuleRepository.SoftDelete(modules);
                 return _unitofWork.Commit();
             }
+        }
+
+        public WebExcuteResult<List<SysModuleDictionaryList>> GetModuleList()
+        {
+            var list = _sysModuleRepository.GetEntities().OrderBy(t=>t.MNo).Select(t => new SysModuleDictionaryList()
+            {
+                Id = t.Id,
+                MName = t.MName,
+                //MNo = t.MNo
+            }).ToList();
+            list.Insert(0,new SysModuleDictionaryList(){Id = Guid.Empty,MName = "请选择"});
+            return new WebExcuteResult<List<SysModuleDictionaryList>>(list);
         }
     }
 

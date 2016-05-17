@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using CPy.RequestDto.Pagination;
 using CPy.ResultDto.ExcuteResult;
 using CPy.ResultDto.Pagination;
@@ -38,17 +39,18 @@ namespace CPy.Linq.Extensions
         /// <typeparam name="TEnity">实体类</typeparam>
         /// <typeparam name="TDto">数据传输对象</typeparam>
         /// <param name="queryable"></param>
+        /// <param name="dto"></param>
         /// <returns></returns>
         public static WebExcuteResult<PagedResultOutPut<TDto>> CheckifNoCount<TEnity, TDto>(this IQueryable<TEnity> queryable)
         {
             var count = queryable.Count();
             if (count==0)
             {
-                return new WebExcuteResult<PagedResultOutPut<TDto>>(ExcuteResultType.SuccessNoDate, new PagedResultOutPut<TDto>(null, count));
+                return new WebExcuteResult<PagedResultOutPut<TDto>>(ExcuteResultType.SuccessNoDate, new PagedResultOutPut<TDto>(new List<TDto>(), count));
             }
             else
             {
-                return new WebExcuteResult<PagedResultOutPut<TDto>>(ExcuteResultType.Success, new PagedResultOutPut<TDto>(null, count));
+                return new WebExcuteResult<PagedResultOutPut<TDto>>(ExcuteResultType.Success, new PagedResultOutPut<TDto>(new List<TDto>(), count));
             }
         }
     }

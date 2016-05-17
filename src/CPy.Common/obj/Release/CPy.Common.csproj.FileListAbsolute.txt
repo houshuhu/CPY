@@ -1,0 +1,5 @@
+E:\housh\Cpy\src\CPy.Common\bin\Release\CPy.Common.dll
+E:\housh\Cpy\src\CPy.Common\bin\Release\CPy.Common.pdb
+E:\housh\Cpy\src\CPy.Common\obj\Release\CPy.Common.csprojResolveAssemblyReference.cache
+E:\housh\Cpy\src\CPy.Common\obj\Release\CPy.Common.dll
+E:\housh\Cpy\src\CPy.Common\obj\Release\CPy.Common.pdb

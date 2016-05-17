@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="padding: 10px 60px 20px 60px">
+    @Html.Partial("_FormToolBarPartialPage")
+
+    <form id="ff" class="formbody" method="post">
+
+        <input type="hidden" name="Id" />
+        <table cellpadding="5">
+            <tr>
+                <td>模块:</td>
+                <td>
+                    <input id="hdModuleId" name="SysModuleId" type="hidden" value="@ViewData["ModuleId"]" />
+                    <input id="moduleCmb" class="easyui-combobox" name="moduleCmb" style="width: 200px; height: 25px;" data-options="required:true,valueField:'Id',textField:'MName'">
+                </td>
+            </tr>
+            <tr>
+                <td>编号:</td>
+                <td><input class="easyui-textbox" style="height: 25px; width: 200px;" type="text" name="FNo" data-options="required:true" /></td>
+            </tr>
+            <tr>
+                <td>名称:</td>
+                <td><input class="easyui-textbox" style="height: 25px; width: 200px;" type="text" name="FName" data-options="required:true" /></td>
+            </tr>
+            <tr>
+                <td>URL:</td>
+                <td><input class="easyui-textbox" style="height: 25px; width: 200px;" type="text" name="FUrl" data-options="required:true" /></td>
+            </tr>
+        </table>
+    </form>
+
+
+</div>
+
+<script>
+
+    $(function () {
+        var id = HandleUrl.GetQueryString("Id");
+        var moduleId = HandleUrl.GetQueryString("ModuleId");
+
+        //初始化模块下拉控件
+        HandleForm.InitCombobox('moduleCmb', '@Url.Action("GetModuleList","SysModule",new{area="Admin"})', function (data) {
+            $("#hdModuleId").val(data.Id);
+        });
+
+        //id不为空，则为编辑加载form表单
+        if (id) {
+            HandleForm.LoadForm('ff', '@Url.Action("InitDetail", "SysFunction", new { area = "Admin"})?id=' + id);
+            $('#moduleCmb').combobox('setValue', moduleId);
+        } else {
+            setdefaulevalue();
+        }
+    });
+
+    function setdefaulevalue() {
+        var moduleId = HandleUrl.GetQueryString("ModuleId");
+        if (moduleId) {
+            $('#moduleCmb').combobox('setValue', moduleId);
+        } else {
+            $('#moduleCmb').combobox('setValue', "00000000-0000-0000-0000-000000000000");
+        }
+    }
+
+    function submitForm() {
+        HandleForm.SubmitForm('ff', '@Url.Action("Add","SysFunction",new{area="Admin"})', function() {
+            location.href = '@Url.Action("Index","SysFunction",new{area="Admin"})';
+
+        });
+    }
+
+    function clearForm() {
+        $("#ff").form('clear');
+    }
+
+    function back() {
+        location.href = '@Url.Action("Index","SysFunction",new{area="Admin"})';
+    }
+</script>

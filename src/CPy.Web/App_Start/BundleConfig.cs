@@ -11,7 +11,8 @@ namespace CPy.Web
             //加载easyui默认样式
             bundles.Add(new StyleBundle("~/easyui/css").Include(
                       "~/Content/jquery_easyui/themes/default/easyui.css",
-                      "~/Content/jquery_easyui/themes/icon.css"));
+                      "~/Content/jquery_easyui/themes/icon.css",
+                      "~/Content/jquery_easyui/themes/own-icon.css"));
 
             //加载必需脚本
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
