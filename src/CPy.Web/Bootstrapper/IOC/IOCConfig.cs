@@ -36,6 +36,7 @@ namespace CPy.Web.Bootstrapper.IOC
             container.RegisterType<IUserApplication, UserApplication>();
             container.RegisterType<ISysModuleApplication, SysModuleApplication>();
             container.RegisterType<ISysFunctionApplication,SysFunctionApplication>();
+            container.RegisterType<ILayoutApplication, LayoutApplication>();
         }
 
         public static void RepositoryRegister(UnityContainer container)

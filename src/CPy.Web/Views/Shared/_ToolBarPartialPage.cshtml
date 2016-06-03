@@ -14,7 +14,7 @@
                 }
                 if (functionModule.Id == "Remove" && functionModule.IsEnable)
                 {
-                    <div class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="remove() ">删除</div>
+                    <a class="easyui-linkbutton" iconcls="icon-remove" plain="true" onclick="deleteItem()">删除</a>
                 }
             }
         }
@@ -52,10 +52,10 @@
                     </span>
                 }
             }
-            <div class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick=@(@Model.ToolBarId + "search()")>查询</div>
+            <a class="easyui-linkbutton" iconcls="icon-search" plain="true" onclick=@(@Model.ToolBarId + "search()")>查询</a>
             if (@Model.IsEnableReset)
             {
-                <div class="easyui-linkbutton" iconcls="icon-reload" plain="true" onclick=@(@Model.ToolBarId + "reset()")>重置</div>
+                <a class="easyui-linkbutton" iconcls="icon-reload" plain="true" onclick=@(@Model.ToolBarId + "reset()")>重置</a>
             }
         }
 

@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\ILayoutApplication.cs" />
     <Compile Include="Admin\ISysFunctionApplication.cs" />
     <Compile Include="Admin\ISysModuleApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -36,7 +36,6 @@ E:\housh\Cpy\src\CPy.EntityFrameWork\bin\Release\zh-Hans\System.Web.Mvc.resource
 E:\housh\Cpy\src\CPy.EntityFrameWork\bin\Release\zh-Hans\System.Web.Http.resources.dll
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Release\CPy.EntityFrameWork.csprojResolveAssemblyReference.cache
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Release\CPy.EntityFrameWork.Migrations.inital.resources
-E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Release\CPy.EntityFrameWork.Migrations.updateutype.resources
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Release\CPy.EntityFrameWork.csproj.GenerateResource.Cache
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Release\CPy.EntityFrameWork.dll
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Release\CPy.EntityFrameWork.pdb

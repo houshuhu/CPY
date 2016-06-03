@@ -13,40 +13,43 @@
     @Styles.Render("~/easyui/css")
     @Scripts.Render("~/bundles/jquery")
     <script src="~/Content/Scripts/jqueryui.layout.common.js" type="text/javascript"></script>
-    <link rel="stylesheet/less" type="text/css" href="~/Content/less/main.layout.common.less" />
-    <script src="~/Content/Scripts/less.min.js"></script>
+    @*<link rel="stylesheet/less" type="text/css" href="~/Content/less/main.layout.common.less" />
+        <script src="~/Content/Scripts/less.min.js"></script>*@
 </head>
 <body class="easyui-layout">
-    <h2>fjaojfoajfaofj</h2>
     <div data-options="region:'north',border:false" style="height: 70px; background: #2596ea; padding: 10px">
-        <p style="width: 300px; height: 50px; line-height: 50px; color: #fff; margin: 0; float: left;font-size: 25px">TonyKit 后台管理系统</p>
+        <p style="width: 300px; height: 50px; line-height: 50px; color: #fff; margin: 0; float: left; font-size: 25px">TonyKit 后台管理系统</p>
     </div>
     <div data-options="region:'west',split:true,title:'导航菜单'" style="width: 170px;">
         <div class="easyui-accordion" data-options="fit:true,border:false">
-            <div title="系统管理" data-options="selected:true,iconCls:'own-icon own-icon-sys'">
-                <ul>
-                    <li>
-                        <div>
-                            <a href="javascript:void(0)" src="@Url.Action("Index", "SysModule", new {area = "Admin"})"><span class="own-icon own-icon-nav ">&nbsp;</span>模块管理</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div><a href="javascript:void(0)" src="@Url.Action("Index", "SysFunction", new {area = "Admin"})"><span class="own-icon own-icon-nav ">&nbsp;</span>菜单管理</a></div>
-                    </li>
-                </ul>
-            </div>
             <div title="系统管理" data-options="iconCls:'own-icon own-icon-sys'">
-                <ul>
-                    <li>
-                        <div>
-                            <a href="javascript:void(0)" iconcls="icon-nav" src="@Url.Action("Index", "SysModule", new {area = "Admin"})">模块管理</a>
-                        </div>
-                    </li>
-                    <li>
-                        <div><a href="javascript:void(0)" src="@Url.Action("Index", "User", new {area = "User"})">用户管理</a></div>
-                    </li>
-                </ul>
-            </div>
+                    <ul>
+                        <li>
+                                <div>
+                                    <a href="javascript:void(0)" class="layout-menu" src="@Url.Action("Index", "SysModule", new {area = "Admin"})"><span class="own-icon own-icon-nav ">&nbsp;</span>模块管理</a>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="javascript:void(0)" class="layout-menu" src="@Url.Action("Index", "SysFunction", new {area = "Admin"})"><span class="own-icon own-icon-nav ">&nbsp;</span>菜单管理</a>
+                                </div>
+                            </li>
+                    </ul>
+                </div>
+                @*<div title="系统管理" data-options="iconCls:'own-icon own-icon-sys'">
+                    <ul>
+                        <li>
+                            <div>
+                                <a href="javascript:void(0)" class="layout-menu" iconcls="icon-nav" src="@Url.Action("Index", "SysModule", new {area = "Admin"})">模块管理</a>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <a href="javascript:void(0)" class="layout-menu" src="@Url.Action("Index", "User", new {area = "User"})">用户管理</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>*@
         </div>
     </div>
     <div data-options="region:'south',border:false" style="height: 40px; padding: 10px;">south region</div>
@@ -65,5 +68,64 @@
         <div id="closeother">关闭其他</div>
         <div id="closeall">关闭全部</div>
     </div>
+    @*<script>
+        var resultdata = [
+            {
+                MNo: "",
+                MName: "",
+                SysFunctions: [
+                    {
+                        FNo: "",
+                        FName: "",
+                        FUrl: ""
+                    }
+                ]
+            }
+        ];
+
+        $(function () {
+            HandleData.LoadData('@Url.Action("GetModuleList","Layout")', function (data) {
+                resultdata = data.ResultData;
+                $.each(resultdata, function (index, moduleValue) {
+                    var title = "<span class=\"panel-icon own-icon own-icon-sys\"></span><span style=\"margin-left:20px\">" + moduleValue.MName + "</span>";
+                    var content = "<ul>";
+                    $.each(moduleValue.SysFunctions, function (index, funcValue) {
+                        content += "<li>";
+                        content += "<div>";
+                        content += "<a href=\"javascript:void(0)\" class=\"layout-menu\" iconcls=\"icon-nav\" src=\"" + funcValue.FUrl + "\"><span class=\"own-icon own-icon-nav \">&nbsp;</span>" + funcValue.FName+ "</a>";
+                        content += "</div>";
+                        content += "</li>";
+                    });
+                    content += "</ul>";
+                    console.log(title);
+                    console.log(content);
+                    $(".easyui-accordion").accordion('add', {
+                        title: title,
+                        content: content,
+                        selected: false
+                    });
+                });
+
+            });
+            //$(".easyui-accordion li a").click(function () {
+            //    console.log('addtab');
+            //    var $this = $(this);
+            //    var href = $this.attr('src');
+            //    var title = $this.text();
+            //    addTab($this, title, href);
+            //});
+            $(".easyui-accordion li a").each(function(index,value) {
+                var $this = $(this);
+                console.log($this.text());
+                $this.onClick(function() {
+                    var href = $this.attr('src');
+                    var title = $this.text();
+                    addTab($this, title, href);
+                });
+            });
+            tabCloseEven();
+        });
+
+    </script>*@
 </body>
 </html>

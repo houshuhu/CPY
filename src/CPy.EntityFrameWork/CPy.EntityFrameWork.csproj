@@ -81,10 +81,6 @@
     <Compile Include="Migrations\201604060900385_inital.Designer.cs">
       <DependentUpon>201604060900385_inital.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201604060912373_updateutype.cs" />
-    <Compile Include="Migrations\201604060912373_updateutype.Designer.cs">
-      <DependentUpon>201604060912373_updateutype.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitofWork\UnitofWork.cs" />
@@ -111,9 +107,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201604060900385_inital.resx">
       <DependentUpon>201604060900385_inital.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201604060912373_updateutype.resx">
-      <DependentUpon>201604060912373_updateutype.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

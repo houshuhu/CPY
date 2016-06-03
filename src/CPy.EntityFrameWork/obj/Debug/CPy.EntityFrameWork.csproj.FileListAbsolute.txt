@@ -77,7 +77,6 @@ E:\housh\Cpy\src\CPy.EntityFrameWork\bin\Debug\zh-Hans\System.Web.Mvc.resources.
 E:\housh\Cpy\src\CPy.EntityFrameWork\bin\Debug\zh-Hans\System.Web.Http.resources.dll
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Debug\CPy.EntityFrameWork.csprojResolveAssemblyReference.cache
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Debug\CPy.EntityFrameWork.Migrations.inital.resources
-E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Debug\CPy.EntityFrameWork.Migrations.updateutype.resources
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Debug\CPy.EntityFrameWork.csproj.GenerateResource.Cache
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Debug\CPy.EntityFrameWork.dll
 E:\housh\Cpy\src\CPy.EntityFrameWork\obj\Debug\CPy.EntityFrameWork.pdb

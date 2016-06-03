@@ -7,7 +7,7 @@
             function(rowIndex, rowData) {
                 location.href = '/Admin/SysModule/SysModuleDetail?Id=' + rowData.Id;
             });
-        $("#toolbarsearchbtn").bind('click', search);
+        //$("#toolbarsearchbtn").bind('click', search);
     });
     function formatOper(val, row, index) {
         var id = row.Id;
@@ -18,7 +18,8 @@
         location.href = '/Admin/SysModule/SysModuleDetail';
     }
 
-    function remove() {
+    function deleteItem() {
+        console.log('remove');
         HandleDateGrid.DeleteDataGrid('dg', '/Admin/SysModule/Delete');
     }
 

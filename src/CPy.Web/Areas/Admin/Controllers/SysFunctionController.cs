@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using CPy.Dto.Admin;
+using CPy.Dto.Base;
 using CPy.IApplication.Admin;
 using CPy.ModelBinder;
 using CPy.ResultDto.ExcuteResult;
@@ -43,6 +45,11 @@ namespace CPy.Web.Areas.Admin.Controllers
         public JsonResult Add([ModelBinder(typeof(BaseModelBinder<SysFunctionAddParam>))]SysFunctionAddParam param)
         {
             return HandleWebResult.HandleResult(_sysFunctionApplication.Add(param));
+        }
+
+        public JsonResult DeleteFunction([ModelBinder(typeof(BaseModelBinder<BaseDeleteDto>))]BaseDeleteDto dto )
+        {
+            return HandleWebResult.HandleResult(_sysFunctionApplication.Delete(dto.Ids));
         }
     }
 }

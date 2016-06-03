@@ -1,24 +1,23 @@
 ﻿//class点击事件
 $(function() {
-    $(".easyui-accordion a").click(function () {
+    $(".easyui-accordion li a").click(function () {
+        console.log('addtab');
         var $this = $(this);
-        addSelectedClass($this);
         var href = $this.attr('src');
         var title = $this.text();
-        addTab(title, href);
+        addTab($this,title, href);
     });
     tabCloseEven();
 });
 
-function addSelectedClass(elment) {
-    $(".easyui-accordion div").each(function(index, value) {
+
+//新建tab
+function addTab(elment,title, url) {
+    //修改选中样式
+    $(".easyui-accordion div").each(function (index, value) {
         $(this).removeClass("selected");
     });
     elment.parent().addClass("selected");
-}
-
-//新建tab
-function addTab(title, url) {
     
     //如果tab标签存在选中，否则创建新tab
     if ($('#tabs').tabs('exists', title)) {

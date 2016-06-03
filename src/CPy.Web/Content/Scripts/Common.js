@@ -98,11 +98,11 @@
     //删除表格行数据
     DeleteDataGrid: function (dataGridId, url) {
         var dto = {
-            List: []
+            Ids: []
         };
         var selectedrows = $('#' + dataGridId).datagrid('getChecked');
         $.each(selectedrows, function (index, value) {
-            dto.List.push(value.Id);
+            dto.Ids.push(value.Id);
         });
         console.log(JSON.stringify(dto));
         $.ajax({
@@ -113,7 +113,7 @@
             dataType: 'json',
             success: function (data) {
                 if (data.ExceptionMessage) {
-                    alert(data.ExceptionMessage);
+                    $.messager.alert('提示', data.ExceptionMessage, 'info');
                 } else {
                     $.messager.show({
                         title: '提示',
@@ -125,7 +125,7 @@
                     $('#' + dataGridId).datagrid("clearSelections");
                 }
             }, error: function (data) {
-                alert('error');
+                $.messager.alert('错误', data.ExceptionMessage, 'error');
             }
         });
 
@@ -158,17 +158,25 @@ var HandleForm = {
         });
     },
     //提交form表单
-    SubmitForm: function (formid, url, successfun) {
+    SubmitForm: function (formid, url, backUrl) {
         $('#' + formid).form('submit', {
             url: url,
             onSubmit: function () {
-                var isValid = $(this).form('validate');
-                if (!isValid) {
-                    $.messager.alert('提示', '请填写必要信息！', 'info');
-                }
+                var isValid = $('#' + formid).form('enableValidation').form('validate');
+                //alert(isValid)
+                //if (!isValid) {
+                //    $.messager.alert('提示', '请填写必要信息！', 'info');
+                //}
                 return isValid; // 返回false将停止form提交
             },
-            success: successfun
+            success: function (data) {
+                var obj = JSON.parse(data);
+                if (obj.ExceptionMessage) {
+                    $.messager.alert('错误', obj.ExceptionMessage, 'error');
+                } else {
+                    location.href = backUrl;
+                }
+            }
         });
     },
     //初始化Combobox
@@ -191,17 +199,12 @@ var HandleUrl = {
 }
 
 var HandleData = {
-    LoadData: function (url, result) {
+    LoadData: function (url, successfun,errorfun) {
         $.ajax({
             url: url,
             method: 'post',
-            success: function (data) {
-                console.log(data);
-                result = data;
-            },
-            error: function (data) {
-                alert('data');
-            }
+            success: successfun,
+            error: errorfun
         });
     }
     

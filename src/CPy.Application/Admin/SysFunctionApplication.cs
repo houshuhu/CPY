@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using CPy.AutoMapper;
@@ -31,7 +32,7 @@ namespace CPy.Application.Admin
             {
                 expression = expression.And(t => t.FName.Contains(param.FunctionName));
             }
-            if (param.ModuleId!=Guid.Empty)
+            if (param.ModuleId != Guid.Empty)
             {
                 expression = expression.And(t => t.SysModuleId == param.ModuleId);
             }
@@ -56,13 +57,31 @@ namespace CPy.Application.Admin
         {
             using (_unitofWork)
             {
-                var function = new SysFunction();
-                if (param.Id!=Guid.Empty)
+                if (param.Id != Guid.Empty)
                 {
-                    function = _sysFunctionRepository.GetByKey(param.Id);
+                    var function = _sysFunctionRepository.GetByKey(param.Id);
+                    param.MapTo(function);
+                    _sysFunctionRepository.Update(function);
                 }
-                function=param.MapTo(function);
-                _sysFunctionRepository.Insert(function);
+                else
+                {
+                    var function = param.MapTo<SysFunctionAddParam, SysFunction>();
+                    _sysFunctionRepository.Insert(function);
+                }
+                var result = _unitofWork.Commit();
+                return result;
+            }
+        }
+
+        public WebExcuteResult<EmptyResult> Delete(List<Guid> ids)
+        {
+            using (_unitofWork)
+            {
+                if (ids == null || !ids.Any())
+                {
+                    return new WebExcuteResult<EmptyResult>("请选择要删除的选项！");
+                }
+                _sysFunctionRepository.Delete(t => ids.Contains(t.Id));
                 return _unitofWork.Commit();
             }
         }

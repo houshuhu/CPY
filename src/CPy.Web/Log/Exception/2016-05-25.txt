@@ -1,0 +1,13 @@
+记录时间：2016-05-25 13:34:31,760 线程ID:[7] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 13:34:53,254 线程ID:[6] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 13:35:04,851 线程ID:[8] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 13:35:09,628 线程ID:[9] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 13:35:12,937 线程ID:[6] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 13:35:16,152 线程ID:[6] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 13:35:46,090 线程ID:[6] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 14:07:25,718 线程ID:[7] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 14:07:32,592 线程ID:[6] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 14:07:49,863 线程ID:[8] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 14:08:34,467 线程ID:[8] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 14:08:42,509 线程ID:[8] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error
+记录时间：2016-05-25 14:08:44,639 线程ID:[7] 日志级别：ERROR 出错类：log4net property:[(null)] - 错误描述：this is error

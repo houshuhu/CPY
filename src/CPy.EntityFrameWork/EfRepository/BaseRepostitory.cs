@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using CPy.Core.UnitofWork;
 using CPy.Domain.Entities;
 using CPy.Domain.Entities.Audit;
@@ -11,6 +12,21 @@ namespace CPy.EntityFrameWork.EfRepository
     {
         public BaseRepostitory(IUnitofWorkContext unitofWorkContext) : base(unitofWorkContext)
         {
+        }
+
+        public override void Insert(IEnumerable<TEntity> entities)
+        {
+            foreach (var entity in entities)
+            {
+                entity.Id = Guid.NewGuid();
+            }
+            base.Insert(entities);
+        }
+
+        public override void Insert(TEntity entity)
+        {
+            entity.Id = Guid.NewGuid();
+            base.Insert(entity);
         }
     }
 }

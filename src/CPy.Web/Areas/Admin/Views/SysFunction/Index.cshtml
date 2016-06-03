@@ -28,6 +28,10 @@
             location.href = "/Admin/SysFunction/Detail";
         }
     }
+    function deleteItem() {
+        console.log('remove');
+        HandleDateGrid.DeleteDataGrid('functions_dg', '/Admin/SysFunction/DeleteFunction');
+    }
     //菜单查询
     function function_toolbarsearch() {
         var param = {

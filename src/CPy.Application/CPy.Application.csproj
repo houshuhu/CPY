@@ -63,6 +63,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\LayoutApplication.cs" />
     <Compile Include="Admin\SysFunctionApplication.cs" />
     <Compile Include="Admin\SysModuleApplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

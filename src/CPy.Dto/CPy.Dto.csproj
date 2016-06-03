@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\LayoutDto.cs" />
     <Compile Include="Admin\SysFunctionDto.cs" />
     <Compile Include="Admin\SysModuleDto.cs" />
+    <Compile Include="Base\BaseDeleteDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

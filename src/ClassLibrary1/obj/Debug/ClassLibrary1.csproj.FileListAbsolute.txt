@@ -1,0 +1,13 @@
+E:\housh\Cpy\src\ClassLibrary1\obj\Debug\ClassLibrary1.csprojResolveAssemblyReference.cache
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\Castle.Core.dll
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\Castle.Windsor.dll
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\log4net.dll
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\nunit.framework.dll
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\Castle.Core.xml
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\Castle.Windsor.xml
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\log4net.xml
+E:\housh\Cpy\src\ClassLibrary1\bin\Debug\nunit.framework.xml
+E:\housh\Cpy\src\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+E:\housh\Cpy\src\ClassLibrary1\obj\Debug\ClassLibrary1.pdb

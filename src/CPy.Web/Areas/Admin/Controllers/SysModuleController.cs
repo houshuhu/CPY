@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using CPy.Dto.Admin;
+using CPy.Dto.Base;
 using CPy.IApplication.Admin;
 using CPy.Log;
 using CPy.ModelBinder;
@@ -52,9 +53,9 @@ namespace CPy.Web.Areas.Admin.Controllers
         }
 
         [HttpPost]
-        public JsonResult Delete([ModelBinder(typeof(BaseModelBinder<SysModuleDeleteDto>))]SysModuleDeleteDto dto)
+        public JsonResult Delete([ModelBinder(typeof(BaseModelBinder<BaseDeleteDto>))]BaseDeleteDto dto)
         {
-            return HandleWebResult.HandleResult(_sysModuleApplication.Delete(dto.List));
+            return HandleWebResult.HandleResult(_sysModuleApplication.Delete(dto.Ids));
         }
 
         [HttpGet]

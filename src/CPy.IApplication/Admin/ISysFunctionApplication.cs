@@ -1,5 +1,6 @@
 ﻿
 using System;
+using System.Collections.Generic;
 using CPy.Dto.Admin;
 using CPy.ResultDto.ExcuteResult;
 using CPy.ResultDto.Pagination;
@@ -12,5 +13,7 @@ namespace CPy.IApplication.Admin
 
         WebExcuteResult<SysFunctionDetail> InitDetail(Guid id);
         WebExcuteResult<EmptyResult> Add(SysFunctionAddParam param);
+
+        WebExcuteResult<EmptyResult> Delete(List<Guid> ids);
     }
 }

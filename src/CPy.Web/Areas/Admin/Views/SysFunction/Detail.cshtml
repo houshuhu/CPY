@@ -13,8 +13,7 @@
             <tr>
                 <td>模块:</td>
                 <td>
-                    <input id="hdModuleId" name="SysModuleId" type="hidden" value="@ViewData["ModuleId"]" />
-                    <input id="moduleCmb" class="easyui-combobox" name="moduleCmb" style="width: 200px; height: 25px;" data-options="required:true,valueField:'Id',textField:'MName'">
+                    <input id="moduleCmb" class="easyui-combobox" validtype="comboxValidate['moduleCmb','请选择模块']" name="SysModuleId" style="width: 200px; height: 25px;" data-options="required:true,valueField:'Id',textField:'MName'">
                 </td>
             </tr>
             <tr>
@@ -27,7 +26,11 @@
             </tr>
             <tr>
                 <td>URL:</td>
-                <td><input class="easyui-textbox" style="height: 25px; width: 200px;" type="text" name="FUrl" data-options="required:true" /></td>
+                <td><input class="easyui-textbox" style="height: 25px; width: 200px;" type="text" name="FUrl" data-options="required:true"/></td>
+            </tr>
+            <tr>
+                <td id="ht">添加Html</td>
+                <td id="ht1"></td>
             </tr>
         </table>
     </form>
@@ -49,10 +52,14 @@
         //id不为空，则为编辑加载form表单
         if (id) {
             HandleForm.LoadForm('ff', '@Url.Action("InitDetail", "SysFunction", new { area = "Admin"})?id=' + id);
-            $('#moduleCmb').combobox('setValue', moduleId);
+            //$('#moduleCmb').combobox('setValue', moduleId);
         } else {
             setdefaulevalue();
         }
+        $("#ht").click(function () {
+            console.log('add');
+            addHtml();
+        });
     });
 
     function setdefaulevalue() {
@@ -65,10 +72,7 @@
     }
 
     function submitForm() {
-        HandleForm.SubmitForm('ff', '@Url.Action("Add","SysFunction",new{area="Admin"})', function() {
-            location.href = '@Url.Action("Index","SysFunction",new{area="Admin"})';
-
-        });
+        HandleForm.SubmitForm('ff', '@Url.Action("Add","SysFunction",new{area="Admin"})', '@Url.Action("Index","SysFunction",new{area="Admin"})');
     }
 
     function clearForm() {
@@ -77,5 +81,14 @@
 
     function back() {
         location.href = '@Url.Action("Index","SysFunction",new{area="Admin"})';
+    }
+
+    function addHtml() {
+        var html = "<ul>";
+        html += "<li>121212121212</li>";
+        html += "<li>qwqwqwqwqww</li>";
+        html += "<li>adadadadadsa</li>";
+        html += "</ul>";
+        $(html).appendTo("#ht1");
     }
 </script>

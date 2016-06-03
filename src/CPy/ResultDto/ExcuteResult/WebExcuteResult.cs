@@ -36,6 +36,7 @@ namespace CPy.ResultDto.ExcuteResult
         public WebExcuteResult(string exceptionMessage, ExcuteResultType resultType = ExcuteResultType.Error)
         {
             ExceptionMessage = exceptionMessage;
+            ResultType = resultType;
         }
 
     }

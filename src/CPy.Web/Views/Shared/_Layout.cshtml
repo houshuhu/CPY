@@ -24,6 +24,40 @@
             margin-top: 40px;
         }
     </style>
+    <script>
+        $(function () {
+            $.extend($.fn.validatebox.defaults.rules, {
+                minLength: {
+                    validator: function (value, param) {
+                        return value.length >= param[0];
+                    },
+                    message: 'Please enter at least {0} characters.'
+                }
+            });
+            $.extend($.fn.validatebox.defaults.rules, {
+                 comboxValidate: {
+                      validator: function(value, comboboxId,message) {
+                          if ($('#' + comboboxId).combobox('getText') == '请选择') {
+                                return false;
+                          }
+                           return true;
+                      },
+                      message: "{1}"
+                 }
+            });
+            $.extend($.fn.validatebox.defaults.rules, {
+                required: {
+                    validator: function (value, param) {
+                        if (param.length==0) {
+                            return false;
+                        }
+                        return true;
+                    },
+                    message: "{1}"
+                }
+            });
+        });
+    </script>
 </head>
 <body class="easyui-layout" style="overflow: auto">
     @RenderBody()

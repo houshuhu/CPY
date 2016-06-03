@@ -43,6 +43,17 @@ namespace ClassLibrary1
             var newstudent = new Student() { Id = 2, Name = "002"};
             var ss = oldstudent.Map(newstudent);
         }
+
+        [Test]
+        public void Test3()
+        {
+            int a = 7;
+            int b = 4;
+            int c = 5;
+           int d= (int)Math.Floor((double)(a*100)/(a + b+c));
+           int e = (int)Math.Floor((double)(b * 100) / (a + b + c));
+           int f = (int)Math.Floor((double)(c * 100) / (a + b + c));
+        }
     }
 
     public static class Mapper

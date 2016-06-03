@@ -1,13 +1,14 @@
 ﻿@using CPy.Common.ToolStrip
 <script>
     $(function () {
+        alert('123qwe');
         HandleDateGrid.InitDataGrid("dg", 'toolbar', "@Url.Action("InitGrid", "SysModule")", "Id", false,
             function(rowIndex, rowData) {
             },
             function(rowIndex, rowData) {
                 location.href = '/Admin/SysModule/SysModuleDetail?Id=' + rowData.Id;
             });
-        $("#toolbarsearchbtn").bind('click', search);
+        //$("#toolbarsearchbtn").bind('click', search);
     });
     function formatOper(val, row, index) {
         var id = row.Id;
